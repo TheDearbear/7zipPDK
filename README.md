@@ -2,16 +2,6 @@
 7zipPDK allow you to write and compile external codecs and formats for 7zip in c++
 
 ### Full Exports List
-Unused (commented out):
- - LibStartup
- - MAPISendDocuments (Mapi32.dll only)
- - DwmGetWindowAttribute
-
-Mapi32.dll exclusive:
- - MAPISendDocuments
- - MAPISendMail
-
-Available:
  - CreateObject
  - CreateDecoder
  - CreateEncoder
@@ -28,9 +18,9 @@ Available:
  - SetCodecs
 
 ### Exports Overview
-#### STDAPI CreateObject(const GUID \*clsid, const GUID \*iid, void **outObject)
+#### STDAPI CreateObject(const GUID \*clsid, const GUID \*iid, void \*\*outObject)
 Description: Idk  
-Return: Idk  
+Return: Error code  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
@@ -40,9 +30,9 @@ Parameters:
 
 ------------
 
-#### STDAPI CreateDecoder(UInt32 index, const GUID \*iid, void **outObject)
+#### STDAPI CreateDecoder(UInt32 index, const GUID \*iid, void \*\*outObject)
 Description: Idk  
-Return: Idk  
+Return: Error code  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
@@ -52,9 +42,9 @@ Parameters:
 
 ------------
 
-#### STDAPI CreateEncoder(UInt32 index, const GUID \*iid, void **outObject)
+#### STDAPI CreateEncoder(UInt32 index, const GUID \*iid, void \*\*outObject)
 Description: Idk  
-Return: Idk  
+Return: Error code  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
@@ -66,7 +56,7 @@ Parameters:
 
 #### STDAPI GetNumberOfMethods(UINT32 \*numCodecs)
 Description: Idk  
-Return: Idk  
+Return: Error code  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
@@ -76,7 +66,7 @@ Parameters:
 
 #### STDAPI GetNumberOfFormats(UINT32 \*numFormats)
 Description: Idk  
-Return: Idk  
+Return: Error code  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
@@ -86,7 +76,7 @@ Parameters:
 
 #### STDAPI GetMethodProperty(UInt32 codecIndex, PROPID propID, PROPVARIANT \*value)
 Description: Idk  
-Return: Idk  
+Return: Error code  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
@@ -96,8 +86,82 @@ Parameters:
 
 ------------
 
-#### HRESULT LibStartup()
-NOT USED BY PRECOMPILED 7ZIP! TO ENABLE THIS, YOU NEED TO UNCOMMENT SPECIFIC CODE AND COMPILE IT YOURSELF!  
-Description: Will be called on library startup  
+#### STDAPI GetHandlerProperty(PROPID propID, PROPVARIANT \*value)
+Description: Idk  
+Return: Error code  
+Parameters:
+| Name | Type | Description |
+| ------------ | ------------ | ------------ |
+| propID | PROPID | idk |
+| value | PROPVARIANT \* | Value |
+
+------------
+
+#### STDAPI GetHandlerProperty2(UInt32 formatIndex, PROPID propID, PROPVARIANT \*value)
+Description: Idk  
+Return: Error code  
+Parameters:
+| Name | Type | Description |
+| ------------ | ------------ | ------------ |
+| formatIndex | UInt32 | Format Index |
+| propID | PROPID | Property ID |
+| value | PROPVARIANT \* | Value |
+
+------------
+
+#### STDAPI GetPluginProperty(PROPID propID, PROPVARIANT \*value)
+Description: Idk  
+Return: Error code  
+Parameters:
+| Name | Type | Description |
+| ------------ | ------------ | ------------ |
+| propID | PROPID | Property ID |
+| value | PROPVARIANT \* | Value |
+
+------------
+
+#### STDAPI GetHashers(IHashers \*\*hashers)
+Description: Idk  
+Return: Error code  
+Parameters:
+| Name | Type | Description |
+| ------------ | ------------ | ------------ |
+| hashers | IHashers ** | Hashers |
+
+------------
+
+#### STDAPI GetIsArc(UInt32 formatIndex, Func_IsArc \*isArc)
+Description: Idk  
+Return: Error code  
+Parameters:
+| Name | Type | Description |
+| ------------ | ------------ | ------------ |
+| formatIndex | UInt32 | Format Index |
+| isArc | Func_IsArc \* | idk |
+
+------------
+
+#### STDAPI SetLargePageMode()
+Description: Update Large Page Mode and its size  
 Return: Error code  
 Parameters: *NONE*
+
+------------
+
+#### STDAPI SetCaseSensitive(Int32 caseSensitive)
+Description: Set case sensitivity for path and filenames  
+Return: Error code  
+Parameters:
+| Name | Type | Description |
+| ------------ | ------------ | ------------ |
+| caseSensitive | Int32 | Is case sensitive (1 or 0) |
+
+------------
+
+#### STDAPI SetCodecs(ICompressCodecsInfo \*compressCodecsInfo)
+Description: Idk  
+Return: Error code  
+Parameters:
+| Name | Type | Description |
+| ------------ | ------------ | ------------ |
+| compressCodecsInfo | ICompressCodecsInfo \* | idk |
