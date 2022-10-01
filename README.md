@@ -5,8 +5,8 @@
  - CreateObject
  - CreateDecoder
  - CreateEncoder
- - GetNumberOfMethods
- - GetNumberOfFormats
+ - [GetNumberOfMethods](#extern-c-hresult-getnumberofmethodsunsigned-int-numcodecs)
+ - [GetNumberOfFormats](#extern-c-hresult-getnumberofformatsunsigned-int-numformats)
  - GetMethodProperty
  - GetHandlerProperty
  - GetHandlerProperty2
@@ -19,18 +19,20 @@
 
 ### Exports Overview
 #### STDAPI CreateObject(const GUID \*clsid, const GUID \*iid, void \*\*outObject)
-Description: Idk  
-Return: Error code  
+##### Currently WIP
+Description: This function will be called if 7zip need to create codec, hasher, archiver or any other stuff  
+Return: Int32 | Error code  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
-| clsid | GUID \* | Your id? |
-| iid | GUID \* | idk |
-| outObject | void ** | Some memory |
+| clsid | GUID \* | Requested class |
+| iid | GUID \* | Requested category |
+| outObject | void \*\* | Function result |
 
 ------------
 
 #### STDAPI CreateDecoder(UInt32 index, const GUID \*iid, void \*\*outObject)
+##### Currently WIP
 Description: Idk  
 Return: Error code  
 Parameters:
@@ -43,6 +45,7 @@ Parameters:
 ------------
 
 #### STDAPI CreateEncoder(UInt32 index, const GUID \*iid, void \*\*outObject)
+##### Currently WIP
 Description: Idk  
 Return: Error code  
 Parameters:
@@ -54,27 +57,28 @@ Parameters:
 
 ------------
 
-#### STDAPI GetNumberOfMethods(UINT32 \*numCodecs)
-Description: Idk  
+#### extern "C" HRESULT GetNumberOfMethods(unsigned int \*numCodecs)
+Description: Get number of supported codecs by this plugin  
 Return: Error code  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
-| numCodecs | UINT32 \* | Return value |
+| numCodecs | unsigned int \* | Number of codecs |
 
 ------------
 
-#### STDAPI GetNumberOfFormats(UINT32 \*numFormats)
-Description: Idk  
+#### extern "C" HRESULT GetNumberOfFormats(unsigned int \*numFormats)
+Description: Get number of supported formats by this plugin  
 Return: Error code  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
-| numFormats | UINT32 \* | Return value |
+| numFormats | unsigned int \* | Number of formats |
 
 ------------
 
 #### STDAPI GetMethodProperty(UInt32 codecIndex, PROPID propID, PROPVARIANT \*value)
+##### Currently WIP
 Description: Idk  
 Return: Error code  
 Parameters:
@@ -87,6 +91,7 @@ Parameters:
 ------------
 
 #### STDAPI GetHandlerProperty(PROPID propID, PROPVARIANT \*value)
+##### Currently WIP
 Description: Idk  
 Return: Error code  
 Parameters:
@@ -98,6 +103,7 @@ Parameters:
 ------------
 
 #### STDAPI GetHandlerProperty2(UInt32 formatIndex, PROPID propID, PROPVARIANT \*value)
+##### Currently WIP
 Description: Idk  
 Return: Error code  
 Parameters:
@@ -110,6 +116,7 @@ Parameters:
 ------------
 
 #### STDAPI GetPluginProperty(PROPID propID, PROPVARIANT \*value)
+##### Currently WIP
 Description: Idk  
 Return: Error code  
 Parameters:
@@ -121,6 +128,7 @@ Parameters:
 ------------
 
 #### STDAPI GetHashers(IHashers \*\*hashers)
+##### Currently WIP
 Description: Idk  
 Return: Error code  
 Parameters:
@@ -131,6 +139,7 @@ Parameters:
 ------------
 
 #### STDAPI GetIsArc(UInt32 formatIndex, Func_IsArc \*isArc)
+##### Currently WIP
 Description: Idk  
 Return: Error code  
 Parameters:
@@ -142,6 +151,7 @@ Parameters:
 ------------
 
 #### STDAPI SetLargePageMode()
+##### Currently WIP
 Description: Update Large Page Mode and its size  
 Return: Error code  
 Parameters: *NONE*
@@ -149,6 +159,7 @@ Parameters: *NONE*
 ------------
 
 #### STDAPI SetCaseSensitive(Int32 caseSensitive)
+##### Currently WIP
 Description: Set case sensitivity for path and filenames  
 Return: Error code  
 Parameters:
@@ -159,6 +170,7 @@ Parameters:
 ------------
 
 #### STDAPI SetCodecs(ICompressCodecsInfo \*compressCodecsInfo)
+##### Currently WIP
 Description: Idk  
 Return: Error code  
 Parameters:
