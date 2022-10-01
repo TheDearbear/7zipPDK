@@ -10,11 +10,11 @@
  - [GetMethodProperty](#extern-c-hresult-getmethodpropertyunsigned-int-codecindex-unsigned-long-long-propid-propvariant-value)
  - GetHandlerProperty
  - GetHandlerProperty2
- - GetPluginProperty
+ - [GetPluginProperty](#extern-c-hresult-getpluginpropertyunsigned-long-long-propid-propvariant-value)
  - GetHashers
  - GetIsArc
- - SetLargePageMode
- - SetCaseSensitive
+ - [SetLargePageMode](#extern-c-hresult-setlargepagemode)
+ - [SetCaseSensitive](#extern-c-hresult-setcasesensitiveint-casesensitive)
  - SetCodecs
 
 ### Exports Overview
@@ -114,15 +114,14 @@ Parameters:
 
 ------------
 
-#### STDAPI GetPluginProperty(PROPID propID, PROPVARIANT \*value)
-##### Currently WIP
-Description: Idk  
+#### extern "C" HRESULT GetPluginProperty(unsigned long long propID, PROPVARIANT \*value)
+Description: Get specific plugin's property. Plugin should answer with its name, type, class id and options class id  
 Return: Error code  
 Parameters:
-| Name | Type | Description |
-| ------------ | ------------ | ------------ |
-| propID | PROPID | Property ID |
-| value | PROPVARIANT \* | Value |
+|     Name     |        Type        |    Description    |
+| ------------ | ------------------ | ----------------- |
+| propID       | unsigned long long | Property ID       |
+| value        | PROPVARIANT \*     | Value of property |
 
 ------------
 
@@ -149,22 +148,20 @@ Parameters:
 
 ------------
 
-#### STDAPI SetLargePageMode()
-##### Currently WIP
-Description: Update Large Page Mode and its size  
+#### extern "C" HRESULT SetLargePageMode()
+Description: Enable Large-Page mode for this plugin
 Return: Error code  
 Parameters: *NONE*
 
 ------------
 
-#### STDAPI SetCaseSensitive(Int32 caseSensitive)
-##### Currently WIP
-Description: Set case sensitivity for path and filenames  
+#### extern "C" HRESULT SetCaseSensitive(int caseSensitive)
+Description: Toggle case sensitivity for pathes and filenames  
 Return: Error code  
 Parameters:
-| Name | Type | Description |
-| ------------ | ------------ | ------------ |
-| caseSensitive | Int32 | Is case sensitive (1 or 0) |
+|      Name     |     Type     |         Description        |
+| ------------- | ------------ | -------------------------- |
+| caseSensitive | int          | Is case sensitive (1 or 0) |
 
 ------------
 
