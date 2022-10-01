@@ -7,7 +7,7 @@
  - CreateEncoder
  - [GetNumberOfMethods](#extern-c-hresult-getnumberofmethodsunsigned-int-numcodecs)
  - [GetNumberOfFormats](#extern-c-hresult-getnumberofformatsunsigned-int-numformats)
- - GetMethodProperty
+ - [GetMethodProperty](#extern-c-hresult-getmethodpropertyunsigned-int-codecindex-unsigned-long-long-propid-propvariant-value)
  - GetHandlerProperty
  - GetHandlerProperty2
  - GetPluginProperty
@@ -61,9 +61,9 @@ Parameters:
 Description: Get number of supported codecs by this plugin  
 Return: Error code  
 Parameters:
-| Name | Type | Description |
-| ------------ | ------------ | ------------ |
-| numCodecs | unsigned int \* | Number of codecs |
+|     Name     |      Type       |   Description    |
+| ------------ | --------------- | ---------------- |
+|   numCodecs  | unsigned int \* | Number of codecs |
 
 ------------
 
@@ -71,22 +71,21 @@ Parameters:
 Description: Get number of supported formats by this plugin  
 Return: Error code  
 Parameters:
-| Name | Type | Description |
-| ------------ | ------------ | ------------ |
-| numFormats | unsigned int \* | Number of formats |
+|     Name     |       Type      |    Description    |
+| ------------ | --------------- | ----------------- |
+|  numFormats  | unsigned int \* | Number of formats |
 
 ------------
 
-#### STDAPI GetMethodProperty(UInt32 codecIndex, PROPID propID, PROPVARIANT \*value)
-##### Currently WIP
-Description: Idk  
+#### extern "C" HRESULT GetMethodProperty(unsigned int codecIndex, unsigned long long propID, PROPVARIANT \*value)
+Description: Get specific property of selected codec  
 Return: Error code  
 Parameters:
-| Name | Type | Description |
-| ------------ | ------------ | ------------ |
-| codecIndex | UInt32 | Codec Index |
-| propID | PROPID | Property ID |
-| value | PROPVARIANT \* | Value |
+|     Name     |        Type        |    Description    |
+| ------------ | ------------------ | ----------------- |
+|  codecIndex  | unsigned int       | Codec index       |
+|  propID      | unsigned long long | Property ID       |
+|  value       | PROPVARIANT \*     | Value of property |
 
 ------------
 
