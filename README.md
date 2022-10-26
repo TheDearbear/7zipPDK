@@ -149,7 +149,7 @@ Parameters:
 ------------
 
 #### extern "C" HRESULT SetLargePageMode()
-Description: Enable Large-Page mode for this plugin
+Description: Enable Large-Page mode for this plugin  
 Return: Error code  
 Parameters: *NONE*
 
