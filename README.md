@@ -5,12 +5,12 @@
  - CreateObject
  - CreateDecoder
  - CreateEncoder
- - [GetNumberOfMethods](#hresult-getnumberofmethodsuint32-numcodecs)
- - [GetNumberOfFormats](#hresult-getnumberofformatsuint32-numformats)
- - [GetMethodProperty](#hresult-getmethodpropertyuint32-codecindex-uint64-propid-propvariant-value)
+ - [GetNumberOfMethods](#hresult-getnumberofmethodsout-uint32-numcodecs)
+ - [GetNumberOfFormats](#hresult-getnumberofformatsout-uint32-numformats)
+ - [GetMethodProperty](#hresult-getmethodpropertyuint32-codecindex-uint64-propid-out-propvariant-value)
  - GetHandlerProperty
  - GetHandlerProperty2
- - [GetPluginProperty](#hresult-getpluginpropertyuint64-propid-propvariant-value)
+ - [GetPluginProperty](#hresult-getpluginpropertyuint64-propid-out-propvariant-value)
  - GetHashers
  - GetIsArc
  - [SetLargePageMode](#hresult-setlargepagemode)
@@ -57,7 +57,7 @@ Parameters:
 
 ------------
 
-#### HRESULT GetNumberOfMethods(UInt32 \*numCodecs)
+#### HRESULT GetNumberOfMethods([out] UInt32 \*numCodecs)
 Description: Get number of supported codecs by this plugin  
 Return: Error code  
 Parameters:
@@ -67,7 +67,7 @@ Parameters:
 
 ------------
 
-#### HRESULT GetNumberOfFormats(UInt32 \*numFormats)
+#### HRESULT GetNumberOfFormats([out] UInt32 \*numFormats)
 Description: Get number of supported formats by this plugin  
 Return: Error code  
 Parameters:
@@ -77,7 +77,7 @@ Parameters:
 
 ------------
 
-#### HRESULT GetMethodProperty(UInt32 codecIndex, UInt64 propID, PROPVARIANT \*value)
+#### HRESULT GetMethodProperty(UInt32 codecIndex, UInt64 propID, [out] PROPVARIANT \*value)
 Description: Get specific property of selected codec  
 Return: Error code  
 Parameters:
@@ -114,7 +114,7 @@ Parameters:
 
 ------------
 
-#### HRESULT GetPluginProperty(UInt64 propID, PROPVARIANT \*value)
+#### HRESULT GetPluginProperty(UInt64 propID, [out] PROPVARIANT \*value)
 Description: Get specific plugin's property. Plugin should answer with its name, type, class id and options class id  
 Return: Error code  
 Parameters:
