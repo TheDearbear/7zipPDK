@@ -5,16 +5,16 @@
  - CreateObject
  - CreateDecoder
  - CreateEncoder
- - [GetNumberOfMethods](#extern-c-hresult-getnumberofmethodsunsigned-int-numcodecs)
- - [GetNumberOfFormats](#extern-c-hresult-getnumberofformatsunsigned-int-numformats)
- - [GetMethodProperty](#extern-c-hresult-getmethodpropertyunsigned-int-codecindex-unsigned-long-long-propid-propvariant-value)
+ - [GetNumberOfMethods](#hresult-getnumberofmethodsuint32-numcodecs)
+ - [GetNumberOfFormats](#hresult-getnumberofformatsuint32-numformats)
+ - [GetMethodProperty](#hresult-getmethodpropertyuint32-codecindex-uint64-propid-propvariant-value)
  - GetHandlerProperty
  - GetHandlerProperty2
- - [GetPluginProperty](#extern-c-hresult-getpluginpropertyunsigned-long-long-propid-propvariant-value)
+ - [GetPluginProperty](#hresult-getpluginpropertyuint64-propid-propvariant-value)
  - GetHashers
  - GetIsArc
- - [SetLargePageMode](#extern-c-hresult-setlargepagemode)
- - [SetCaseSensitive](#extern-c-hresult-setcasesensitiveint-casesensitive)
+ - [SetLargePageMode](#hresult-setlargepagemode)
+ - [SetCaseSensitive](#hresult-setcasesensitiveint32-casesensitive)
  - SetCodecs
 
 ### Exports Overview
@@ -57,7 +57,7 @@ Parameters:
 
 ------------
 
-#### extern "C" HRESULT GetNumberOfMethods(unsigned int \*numCodecs)
+#### HRESULT GetNumberOfMethods(UInt32 \*numCodecs)
 Description: Get number of supported codecs by this plugin  
 Return: Error code  
 Parameters:
@@ -67,7 +67,7 @@ Parameters:
 
 ------------
 
-#### extern "C" HRESULT GetNumberOfFormats(unsigned int \*numFormats)
+#### HRESULT GetNumberOfFormats(UInt32 \*numFormats)
 Description: Get number of supported formats by this plugin  
 Return: Error code  
 Parameters:
@@ -77,7 +77,7 @@ Parameters:
 
 ------------
 
-#### extern "C" HRESULT GetMethodProperty(unsigned int codecIndex, unsigned long long propID, PROPVARIANT \*value)
+#### HRESULT GetMethodProperty(UInt32 codecIndex, UInt64 propID, PROPVARIANT \*value)
 Description: Get specific property of selected codec  
 Return: Error code  
 Parameters:
@@ -114,7 +114,7 @@ Parameters:
 
 ------------
 
-#### extern "C" HRESULT GetPluginProperty(unsigned long long propID, PROPVARIANT \*value)
+#### HRESULT GetPluginProperty(UInt64 propID, PROPVARIANT \*value)
 Description: Get specific plugin's property. Plugin should answer with its name, type, class id and options class id  
 Return: Error code  
 Parameters:
@@ -148,15 +148,15 @@ Parameters:
 
 ------------
 
-#### extern "C" HRESULT SetLargePageMode()
+#### HRESULT SetLargePageMode()
 Description: Enable Large-Page mode for this plugin  
 Return: Error code  
 Parameters: *NONE*
 
 ------------
 
-#### extern "C" HRESULT SetCaseSensitive(int caseSensitive)
-Description: Toggle case sensitivity for pathes and filenames  
+#### HRESULT SetCaseSensitive(Int32 caseSensitive)
+Description: Toggle case sensitivity for paths and filenames  
 Return: Error code  
 Parameters:
 |      Name     |     Type     |         Description        |
