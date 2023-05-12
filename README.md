@@ -2,7 +2,7 @@
 7zipPDK allow you to write and compile external codecs and formats for 7zip in c++
 
 ### Full Exports List
- - CreateObject
+ - [CreateObject](#hresult-createobjectconst-guid-clsid-const-guid-iid-out-void-outobject)
  - CreateDecoder
  - CreateEncoder
  - [GetNumberOfMethods](#hresult-getnumberofmethodsout-uint32-numcodecs)
@@ -18,16 +18,15 @@
  - SetCodecs
 
 ### Exports Overview
-#### STDAPI CreateObject(const GUID \*clsid, const GUID \*iid, void \*\*outObject)
-##### Currently WIP
-Description: This function will be called if 7zip need to create codec, hasher, archiver or any other stuff  
-Return: Int32 | Error code  
+#### HRESULT CreateObject(const GUID \*clsid, const GUID \*iid, [out] void \*\*outObject)
+Description: Used to create one of the following things: Coder, Hasher, Folder Manager, In/Out Archive Handler, Encoder (if CreateEncoder is not present), Decoder (if CreateDecoder is not present)  
+Return: Error code  
 Parameters:
-| Name | Type | Description |
-| ------------ | ------------ | ------------ |
-| clsid | GUID \* | Requested class |
-| iid | GUID \* | Requested category |
-| outObject | void \*\* | Function result |
+|     Name     |     Type     |     Description    |
+| ------------ | ------------ | ------------------ |
+| clsid        | GUID \*      | Requested class    |
+| iid          | GUID \*      | Requested category |
+| outObject    | void \*\*    | Function result    |
 
 ------------
 
