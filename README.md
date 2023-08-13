@@ -1,5 +1,5 @@
 ## 7-zip Plugin Development Kit
-7zipPDK allow you to write and compile external codecs and formats for 7zip in c++
+7zipPDK will allow you to write and compile external codecs and formats for 7zip soon™
 
 ### Full Exports List
  - [CreateObject](#hresult-createobjectconst-guid-clsid-const-guid-iid-out-void-outobject)
