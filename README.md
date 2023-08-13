@@ -2,25 +2,25 @@
 7zipPDK will allow you to write and compile external codecs and formats for 7zip soon™
 
 ### Full Exports List
- - [CreateObject](#hresult-createobjectconst-guid-clsid-const-guid-iid-out-void-outobject)
+ - [CreateObject](#createobject)
  - CreateDecoder
  - CreateEncoder
- - [GetNumberOfMethods](#hresult-getnumberofmethodsout-uint32-numcodecs)
- - [GetNumberOfFormats](#hresult-getnumberofformatsout-uint32-numformats)
- - [GetMethodProperty](#hresult-getmethodpropertyuint32-codecindex-uint64-propid-out-propvariant-value)
+ - [GetNumberOfMethods](#getnumberofmethods)
+ - [GetNumberOfFormats](#getnumberofformats)
+ - [GetMethodProperty](#getmethodproperty)
  - GetHandlerProperty
  - GetHandlerProperty2
- - [GetPluginProperty](#hresult-getpluginpropertyuint64-propid-out-propvariant-value)
+ - [GetPluginProperty](#getpluginproperty)
  - GetHashers
  - GetIsArc
- - [SetLargePageMode](#hresult-setlargepagemode)
- - [SetCaseSensitive](#hresult-setcasesensitiveint32-casesensitive)
+ - [SetLargePageMode](#setlargepagemode)
+ - [SetCaseSensitive](#setcasesensitive)
  - SetCodecs
 
 ### Exports Overview
-#### HRESULT CreateObject(const GUID \*clsid, const GUID \*iid, [out] void \*\*outObject)
+#### CreateObject
+Definition: __HRESULT CreateObject(const GUID \*clsid, const GUID \*iid, [out] void \*\*outObject)__  
 Description: Used to create one of the following things: Coder, Hasher, Folder Manager, In/Out Archive Handler, Encoder (if CreateEncoder is not present), Decoder (if CreateDecoder is not present)  
-Return: Error code  
 Parameters:
 |     Name     |     Type     |     Description    |
 | ------------ | ------------ | ------------------ |
@@ -30,10 +30,10 @@ Parameters:
 
 ------------
 
-#### STDAPI CreateDecoder(UInt32 index, const GUID \*iid, void \*\*outObject)
+#### CreateDecoder
 ##### Currently WIP
-Description: Idk  
-Return: Error code  
+Definition: __HRESULT CreateDecoder(UInt32 index, const GUID \*iid, void \*\*outObject)__  
+Description: TBD   
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
@@ -43,10 +43,10 @@ Parameters:
 
 ------------
 
-#### STDAPI CreateEncoder(UInt32 index, const GUID \*iid, void \*\*outObject)
+#### CreateEncoder
 ##### Currently WIP
-Description: Idk  
-Return: Error code  
+Definition: __HRESULT CreateEncoder(UInt32 index, const GUID \*iid, void \*\*outObject)__  
+Description: TDB  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
@@ -56,9 +56,9 @@ Parameters:
 
 ------------
 
-#### HRESULT GetNumberOfMethods([out] UInt32 \*numCodecs)
-Description: Get number of supported codecs by this plugin  
-Return: Error code  
+#### GetNumberOfMethods
+Definition: __HRESULT GetNumberOfMethods([out] UInt32 \*numCodecs)__  
+Description: Get number of supported codecs  
 Parameters:
 |     Name     |      Type       |   Description    |
 | ------------ | --------------- | ---------------- |
@@ -66,9 +66,9 @@ Parameters:
 
 ------------
 
-#### HRESULT GetNumberOfFormats([out] UInt32 \*numFormats)
-Description: Get number of supported formats by this plugin  
-Return: Error code  
+#### GetNumberOfFormats
+Definition: __HRESULT GetNumberOfFormats([out] UInt32 \*numFormats)__  
+Description: Get number of supported formats  
 Parameters:
 |     Name     |       Type      |    Description    |
 | ------------ | --------------- | ----------------- |
@@ -76,9 +76,9 @@ Parameters:
 
 ------------
 
-#### HRESULT GetMethodProperty(UInt32 codecIndex, UInt64 propID, [out] PROPVARIANT \*value)
+#### GetMethodProperty
+Definition: __HRESULT GetMethodProperty(UInt32 codecIndex, UInt64 propID, [out] PROPVARIANT \*value)__  
 Description: Get specific property of selected codec  
-Return: Error code  
 Parameters:
 |     Name     |        Type        |    Description    |
 | ------------ | ------------------ | ----------------- |
@@ -88,10 +88,10 @@ Parameters:
 
 ------------
 
-#### STDAPI GetHandlerProperty(PROPID propID, PROPVARIANT \*value)
+#### GetHandlerProperty
 ##### Currently WIP
-Description: Idk  
-Return: Error code  
+Definition: __HRESULT GetHandlerProperty(PROPID propID, PROPVARIANT \*value)__  
+Description: TBD  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
@@ -100,10 +100,10 @@ Parameters:
 
 ------------
 
-#### STDAPI GetHandlerProperty2(UInt32 formatIndex, PROPID propID, PROPVARIANT \*value)
+#### GetHandlerProperty2
 ##### Currently WIP
-Description: Idk  
-Return: Error code  
+Definition: __HRESULT GetHandlerProperty2(UInt32 formatIndex, PROPID propID, PROPVARIANT \*value)__  
+Description: TBD  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
@@ -113,9 +113,9 @@ Parameters:
 
 ------------
 
-#### HRESULT GetPluginProperty(UInt64 propID, [out] PROPVARIANT \*value)
+#### GetPluginProperty
+Definition: __HRESULT GetPluginProperty(UInt64 propID, [out] PROPVARIANT \*value)__  
 Description: Get specific plugin's property. Plugin should answer with its name, type, class id and options class id  
-Return: Error code  
 Parameters:
 |     Name     |        Type        |    Description    |
 | ------------ | ------------------ | ----------------- |
@@ -124,10 +124,10 @@ Parameters:
 
 ------------
 
-#### STDAPI GetHashers(IHashers \*\*hashers)
+#### GetHashers
 ##### Currently WIP
-Description: Idk  
-Return: Error code  
+Definition: __HRESULT GetHashers(IHashers \*\*hashers)__  
+Description: TBD  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
@@ -135,10 +135,10 @@ Parameters:
 
 ------------
 
-#### STDAPI GetIsArc(UInt32 formatIndex, Func_IsArc \*isArc)
+#### GetIsArc
 ##### Currently WIP
-Description: Idk  
-Return: Error code  
+Definition: __HRESULT GetIsArc(UInt32 formatIndex, Func_IsArc \*isArc)__  
+Description: TBD  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
@@ -147,16 +147,16 @@ Parameters:
 
 ------------
 
-#### HRESULT SetLargePageMode()
-Description: Enable Large-Page mode for this plugin  
-Return: Error code  
+#### SetLargePageMode
+Definition: __HRESULT SetLargePageMode()__  
+Description: Enable Large-Page mode for this plugin   
 Parameters: *NONE*
 
 ------------
 
-#### HRESULT SetCaseSensitive(Int32 caseSensitive)
+#### SetCaseSensitive
+Definition: __HRESULT SetCaseSensitive(Int32 caseSensitive)__  
 Description: Toggle case sensitivity for paths and filenames  
-Return: Error code  
 Parameters:
 |      Name     |     Type     |         Description        |
 | ------------- | ------------ | -------------------------- |
@@ -164,10 +164,10 @@ Parameters:
 
 ------------
 
-#### STDAPI SetCodecs(ICompressCodecsInfo \*compressCodecsInfo)
+#### SetCodecs
 ##### Currently WIP
-Description: Idk  
-Return: Error code  
+Definition: __HRESULT SetCodecs(ICompressCodecsInfo \*compressCodecsInfo)__  
+Description: TBD  
 Parameters:
 | Name | Type | Description |
 | ------------ | ------------ | ------------ |
